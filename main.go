@@ -199,7 +199,7 @@ func main() {
         sdrIndex = indexreturn
     }
 
-    dev, err := rtlsdr.Open(0)
+    dev, err := rtlsdr.Open(sdrIndex)
     if err != nil {
         log.Fatal(err)
     }
