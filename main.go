@@ -45,7 +45,8 @@ import (
 
     "github.com/lheijst/rtldavis/protocol"
     "github.com/jpoirier/gortlsdr"
-    "github.com/hztools/go-sdr/pluto"
+    "github.com/hztools/sdr
+    "github.com/hztools/sdr/pluto"
 )
 const maxTr = 8
 
