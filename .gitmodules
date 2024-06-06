@@ -1,3 +1,6 @@
 [submodule "vendor/github.com/jpoirier/gortlsdr"]
 	path = vendor/github.com/jpoirier/gortlsdr
 	url = https://github.com/jpoirier/gortlsdr
+[submodule "vendor/github.com/hztools/go-sdr"]
+	path = vendor/github.com/hztools/go-sdr
+	url = https://github.com/hztools/go-sdr
