@@ -45,6 +45,7 @@ import (
 
     "github.com/lheijst/rtldavis/protocol"
     "github.com/jpoirier/gortlsdr"
+    "github.com/hztools/go-sdr/pluto"
 )
 const maxTr = 8
 
@@ -189,17 +190,8 @@ func main() {
     fs := p.Cfg.SampleRate
 
     // First attempt to open the device as a Serial Number
-    sdrIndex , _ = rtlsdr.GetIndexBySerial(*deviceString)
-    if (sdrIndex <0 ) {
-        indexreturn,err := strconv.Atoi(*deviceString)
-        if (err != nil) {
-          log.Printf("Could not parse device\n")
-          log.Fatal(err)
-        }
-        sdrIndex = indexreturn
-    }
-
-    dev, err := rtlsdr.Open(0)
+   
+    dev, err := pluto.Open(0)
     if err != nil {
         log.Fatal(err)
     }
