@@ -192,14 +192,16 @@ func main() {
 
     // First attempt to open the device as a Serial Number
    
-    dev, err := pluto.Open(0)
+    dev, err := pluto.Open("ip:192.168.2.1")
     if err != nil {
         log.Fatal(err)
     }
 
     hop := p.SetHop(0, 0)    // start program with first hop frequency
     log.Printf("Hop: %s", hop)
-    if err := dev.SetCenterFreq(hop.ChannelFreq + fc); err != nil {
+
+    var centerFreq hz = hop.ChannelFreq + fc
+    if err := dev.SetCenterFrequency(centerFreq); err != nil {
         log.Fatal(err)
     }
 
